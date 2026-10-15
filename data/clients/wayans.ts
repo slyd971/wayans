@@ -74,12 +74,11 @@ const wayansPressKit: PressKitConfig = {
     impact: {
       eyebrow: "",
       title: "WAYANS",
-      accent: "",
+      accent: "AFROBEAT, URBAN FR\n& RNB",
       layout: "showcase",
       fullScreen: true,
       hideDesktopRightFade: true,
-      description:
-        "Un set est un échange d'énergie : DJ Wayans lit la salle, la transforme et la lui renvoie amplifiée, des soirées intimistes aux activations de marque.",
+      description: "",
       image: {
         src: heroImage,
         alt: "Portrait en noir et blanc de DJ Wayans, de profil",
@@ -93,10 +92,9 @@ const wayansPressKit: PressKitConfig = {
     interactive: {
       eyebrow: "",
       title: "WAYANS",
-      accent: "",
+      accent: "AFROBEAT, URBAN FR\n& RNB",
       layout: "interactive",
-      description:
-        "Afro, Amapiano, Dancehall, Zouk, Hip-Hop RnB : des sets qui s'adaptent à chaque public, parce que chaque salle est différente.",
+      description: "",
       image: {
         src: heroImage,
         alt: "Portrait en noir et blanc de DJ Wayans, de profil",
@@ -110,11 +108,10 @@ const wayansPressKit: PressKitConfig = {
     showcase: {
       eyebrow: "",
       title: "WAYANS",
-      accent: "",
+      accent: "AFROBEAT, URBAN FR\n& RNB",
       layout: "showcase",
       contentClassName: "pt-[42vh]! md:pt-16! lg:pt-32!",
-      description:
-        "Un set est un échange d'énergie : DJ Wayans lit la salle, la transforme et la lui renvoie amplifiée, des soirées intimistes aux activations de marque.",
+      description: "",
       image: {
         src: heroImage,
         alt: "Portrait en noir et blanc de DJ Wayans, de profil",

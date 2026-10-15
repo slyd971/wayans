@@ -141,13 +141,16 @@
 
 /* Ligne d'accent du hero plus longue : taille réduite pour tenir sur une ligne. */
 .poster[data-pk-theme="gold"] h1[class] span {
-  font-size: 0.4em;
+  font-size: 0.45em;
   letter-spacing: 0;
-  white-space: nowrap;
+  white-space: pre-line;
+  line-height: 1;
 }
 @media (max-width: 767px) {
-  .poster[data-pk-theme="gold"] h1[class] span { font-size: 0.29em; }
+  .poster[data-pk-theme="gold"] h1[class] span { font-size: 0.36em; }
 }
+/* Paragraphe vide (ex. hero sans description) : pas de marge résiduelle. */
+.poster[data-pk-theme="gold"] p:empty { display: none; }
 
 /* Titre du hero : reste lisible quand il passe sur le bonnet blanc de la photo. */
 .poster[data-pk-theme="gold"] h1[class] {
