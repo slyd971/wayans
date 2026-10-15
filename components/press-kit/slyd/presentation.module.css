@@ -169,7 +169,7 @@
   background-size: 240px 240px;
 }
 
-/* Hero Vitrine (desktop) : fond de la photo presque tout blanc, textes en foncé pour rester lisibles. */
+/* Hero Vitrine (desktop) : fond clair ; seul le titre passe en noir, les couleurs d'accent restent celles du thème. */
 @media (min-width: 768px) {
   .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type {
     --pk-bg: #f1efeb;
@@ -186,20 +186,31 @@
     text-shadow: none;
   }
   .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type h1[class] span {
-    color: #8a6d1f;
+    color: var(--pk-accent) !important;
+    -webkit-text-fill-color: var(--pk-accent);
   }
-  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type [data-pk-stats] [class*="text-[var(--pk-accent)]"],
-  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type [data-pk-stats] > div > :first-child {
-    color: #8a6d1f;
-  }
-  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type [data-pk-stats] [class*="text-white"] {
-    color: rgb(13 13 13 / 0.65);
-  }
+  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type [data-pk-stats] [class*="text-white"],
   .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type [class*="text-white"]:not(a):not(button):not([data-pk-stats] *) {
     color: rgb(13 13 13 / 0.7);
   }
   .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type a[class*="border-white"] {
-    background-color: #0d0d0d;
-    color: #ffffff;
+    background-color: rgb(13 13 13 / 0.88);
+  }
+}
+
+/* KPI du hero plus grands (Wayans). */
+.poster[data-pk-theme="gold"] [data-pk-stats] > div > :first-child {
+  font-size: clamp(2.6rem, 7.5vw, 4.75rem);
+}
+.poster[data-pk-theme="gold"] [data-pk-stats] > div > :last-child {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+@media (min-width: 768px) {
+  .poster[data-pk-theme="gold"] [data-pk-stats] > div > :first-child {
+    font-size: clamp(3.25rem, 5vw, 5rem);
+  }
+  .poster[data-pk-theme="gold"] [data-pk-stats] > div > :last-child {
+    font-size: 1rem;
   }
 }
