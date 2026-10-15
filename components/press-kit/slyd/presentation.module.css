@@ -91,3 +91,22 @@
 
 /* Thème or : l'or est clair, le texte des boutons pleins passe en noir pour rester lisible. */
 .poster[data-pk-theme="gold"] [class*="bg-[var(--pk-accent)]"] { color: #0d0d0d; }
+
+/* Thème or : alternance noir profond / charbon chaud pour rythmer la page. */
+.poster[data-pk-theme="gold"] :global(#clubs),
+.poster[data-pk-theme="gold"] :global(#videos),
+.poster[data-pk-theme="gold"] :global(#contact) {
+  background-color: #2a2418;
+  background-image: linear-gradient(180deg, #342c1c 0%, #231e14 100%);
+  border-top: 1px solid rgb(var(--pk-accent-rgb) / 0.35);
+}
+.poster[data-pk-theme="gold"] :global(#about),
+.poster[data-pk-theme="gold"] :global(#sound) {
+  background-color: #0d0d0d;
+}
+/* La galerie est dans un conteneur centré : le fond est étendu à toute la largeur. */
+.poster[data-pk-theme="gold"] :global(#gallery) {
+  background-color: #0d0d0d;
+  box-shadow: 0 0 0 100vmax #0d0d0d;
+  clip-path: inset(0 -100vmax);
+}
