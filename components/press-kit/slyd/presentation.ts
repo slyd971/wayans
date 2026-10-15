@@ -30,12 +30,13 @@ export function isSlydPoster(client: ClientConfig) {
   return (
     client.slug === "djslyd" ||
     client.slug === "djslyd-en" ||
-    client.slug === "wayans"
+    client.slug === "wayans" ||
+    client.slug === "wayans-en"
   );
 }
 
 export function getSlydClubsTitle(client: ClientConfig) {
-  return client.slug === "djslyd-en" ? "SELECTED REFERENCES" : "QUELQUES RÉFÉRENCES";
+  return client.slug.endsWith("-en") ? "SELECTED REFERENCES" : "QUELQUES RÉFÉRENCES";
 }
 
 export function getSlydPresentationClass(client: ClientConfig) {

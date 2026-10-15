@@ -154,7 +154,7 @@ export default async function Home({ params, searchParams }: HomeProps) {
       <ClubsSection
         clubs={slydPoster ? { ...pressKitConfig.clubs, title: getSlydClubsTitle(client) } : pressKitConfig.clubs}
         slydPoster={slydPoster}
-        language={client.slug === "djslyd-en" ? "en" : "fr"}
+        language={client.slug.endsWith("-en") ? "en" : "fr"}
         brandReferences={slydPoster ? pressKitConfig.brands.items : undefined}
       />
       {hasGalleryContent(pressKitConfig) && (

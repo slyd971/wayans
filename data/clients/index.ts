@@ -1,7 +1,7 @@
-import { wayansClient } from "@/data/clients/wayans";
+import { wayansClient, wayansEnClient } from "@/data/clients/wayans";
 import type { ClientConfig } from "@/data/clients/types";
 
-export const clientRegistry = [wayansClient] as const;
+export const clientRegistry = [wayansClient, wayansEnClient] as const;
 
 export type ClientSlug = (typeof clientRegistry)[number]["slug"];
 
