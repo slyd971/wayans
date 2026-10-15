@@ -88,3 +88,6 @@
 @media (max-width: 767px) {
   .poster h1[class] { font-size: 19vw; }
 }
+
+/* Thème or : l'or est clair, le texte des boutons pleins passe en noir pour rester lisible. */
+.poster[data-pk-theme="gold"] [class*="bg-[var(--pk-accent)]"] { color: #0d0d0d; }

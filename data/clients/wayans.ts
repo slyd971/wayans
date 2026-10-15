@@ -3,7 +3,7 @@ import type { ClientConfig } from "@/data/clients/types";
 
 const soundCloudUrl = "https://on.soundcloud.com/SF5EzbfoILUMNoD6DP";
 const soundCloudEmbedUrl =
-  "https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F1690531214&color=%23f05a28&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false";
+  "https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F1690531214&color=%23c8a448&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false";
 const instagramUrl = "https://www.instagram.com/wayansboy";
 const bookingEmail = "wayans.pro@gmail.com";
 const whatsappUrl = "https://wa.me/33633863568";
@@ -72,7 +72,7 @@ const wayansPressKit: PressKitConfig = {
   ],
   heroVariants: {
     impact: {
-      eyebrow: "DJ • Paris • Depuis 2022",
+      eyebrow: "",
       title: "DJ WAYANS",
       accent: "AFRO • AMAPIANO",
       layout: "showcase",
@@ -91,7 +91,7 @@ const wayansPressKit: PressKitConfig = {
       stats: heroStats,
     },
     interactive: {
-      eyebrow: "Échange d'énergie • Paris",
+      eyebrow: "",
       title: "DJ WAYANS",
       accent: "AFRO • AMAPIANO",
       layout: "interactive",
@@ -108,7 +108,7 @@ const wayansPressKit: PressKitConfig = {
       stats: heroStats,
     },
     showcase: {
-      eyebrow: "DJ • Paris • Depuis 2022",
+      eyebrow: "",
       title: "DJ WAYANS",
       accent: "AFRO • AMAPIANO",
       layout: "showcase",
@@ -393,7 +393,7 @@ export const wayansClient: ClientConfig = {
     ogImage: "/opengraph-image",
     canonical: "https://wayans.presskit.fr/",
   },
-  defaultTheme: "orange",
+  defaultTheme: "gold",
   defaultVariant: "impact",
   pressKit: wayansPressKit,
 };
