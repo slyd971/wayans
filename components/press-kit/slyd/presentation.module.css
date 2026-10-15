@@ -207,6 +207,10 @@
 
 /* Hero Vitrine (desktop) : photo décalée à droite pour ne pas chevaucher le titre ; bord gauche fondu. */
 @media (min-width: 768px) {
+  /* Bande libérée à gauche : même blanc que le bord de la photo, pour un fond continu (pas de noir). */
+  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type div:has(> img[class*="object-cover"]) {
+    background-color: #f8f8f8;
+  }
   .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type img[class*="object-cover"] {
     width: 78%;
     margin-left: auto;
