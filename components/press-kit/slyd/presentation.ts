@@ -27,7 +27,11 @@ const body = localFont({
 // Keyed on the slug, not on `presentation`: in production the FR client comes
 // from Airtable, which has no presentation field.
 export function isSlydPoster(client: ClientConfig) {
-  return client.slug === "djslyd" || client.slug === "djslyd-en";
+  return (
+    client.slug === "djslyd" ||
+    client.slug === "djslyd-en" ||
+    client.slug === "wayans"
+  );
 }
 
 export function getSlydClubsTitle(client: ClientConfig) {

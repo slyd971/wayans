@@ -3,10 +3,30 @@ import type { ClientConfig } from "@/data/clients/types";
 
 const soundCloudUrl = "https://on.soundcloud.com/SF5EzbfoILUMNoD6DP";
 const soundCloudEmbedUrl =
-  "https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F1690531214&color=%23f5c400&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false";
+  "https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F1690531214&color=%23f05a28&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false";
 const instagramUrl = "https://www.instagram.com/wayansboy";
 const bookingEmail = "wayans.pro@gmail.com";
 const whatsappUrl = "https://wa.me/33633863568";
+
+const heroImage = "/wayans/photos/hero-pic.jpeg";
+const heroPosition = "center 20%";
+
+const heroCtas: PressKitConfig["heroVariants"]["impact"]["ctas"] = [
+  { label: "Booker WAYANS", href: "#contact", variant: "primary" },
+  {
+    label: "Écouter Wayans",
+    href: soundCloudUrl,
+    variant: "secondary",
+    external: true,
+  },
+];
+
+const heroStats: PressKitConfig["heroVariants"]["impact"]["stats"] = [
+  { value: "30+", label: "Dates en 2026" },
+  { value: "60K+", label: "Vues Instagram / 3 mois" },
+  { value: "2022", label: "Début sur scène" },
+  { value: "PARIS", label: "Base" },
+];
 
 const wayansPressKit: PressKitConfig = {
   metadata: {
@@ -41,7 +61,7 @@ const wayansPressKit: PressKitConfig = {
       { label: "Contact", href: "#contact" },
     ],
     cta: {
-      label: "Booking",
+      label: "Booker WAYANS",
       href: "#contact",
       variant: "primary",
     },
@@ -53,96 +73,56 @@ const wayansPressKit: PressKitConfig = {
   heroVariants: {
     impact: {
       eyebrow: "DJ • Paris • Depuis 2022",
-      title: "WAYANS",
-      accent: "DJ",
-      genreLine: "Afro • Amapiano • Dancehall • Hip-Hop RnB",
+      title: "DJ WAYANS",
+      accent: "AFRO • AMAPIANO",
+      layout: "impact",
       description:
         "Un set est un échange d'énergie : DJ Wayans lit la salle, la transforme et la lui renvoie amplifiée, des soirées intimistes aux activations de marque.",
-      layout: "impact",
       image: {
-        src: "/wayans/photos/hero-pic.jpeg",
+        src: heroImage,
         alt: "Portrait en noir et blanc de DJ Wayans, de profil",
-        badge: "Paris • Open format",
+        badge: "DJ Wayans • Paris",
         caption: "L'énergie se partage, le DJ la renvoie",
-        position: "50% 25%",
+        position: heroPosition,
       },
-      ctas: [
-        { label: "Booking", href: "#contact", variant: "primary" },
-        {
-          label: "Écouter Wayans",
-          href: soundCloudUrl,
-          variant: "secondary",
-          external: true,
-        },
-      ],
-      stats: [
-        { value: "30+", label: "Dates en 2026" },
-        { value: "60K+", label: "Vues Instagram / 3 mois" },
-        { value: "DEPUIS 2022", label: "Sur scène" },
-        { value: "PARIS", label: "Base" },
-      ],
+      ctas: heroCtas,
+      stats: heroStats,
     },
     interactive: {
       eyebrow: "Échange d'énergie • Paris",
-      title: "WAYANS",
-      accent: "DJ",
+      title: "DJ WAYANS",
+      accent: "AFRO • AMAPIANO",
+      layout: "interactive",
       description:
         "Afro, Amapiano, Dancehall, Zouk, Hip-Hop RnB : des sets qui s'adaptent à chaque public, parce que chaque salle est différente.",
-      layout: "interactive",
       image: {
-        src: "/wayans/photos/hero-pic.jpeg",
+        src: heroImage,
         alt: "Portrait en noir et blanc de DJ Wayans, de profil",
-        badge: "Paris • Open format",
+        badge: "DJ Wayans • Paris",
         caption: "Chaque public est différent, chaque set aussi",
-        position: "50% 25%",
+        position: heroPosition,
       },
-      ctas: [
-        { label: "Booking", href: "#contact", variant: "primary" },
-        {
-          label: "Écouter Wayans",
-          href: soundCloudUrl,
-          variant: "secondary",
-          external: true,
-        },
-      ],
-      stats: [
-        { value: "AFRO", label: "Socle" },
-        { value: "AMAPIANO", label: "Énergie" },
-        { value: "DANCEHALL", label: "Chaleur" },
-        { value: "HIP-HOP RNB", label: "Groove" },
-      ],
+      ctas: heroCtas,
+      stats: heroStats,
     },
     showcase: {
-      eyebrow: "DJ • Paris • Europe",
-      title: "WAYANS",
-      accent: "DJ",
-      description:
-        "Clubs, événements de marque, mariages, festivals et soirées privées : un DJ polyvalent, toujours à la recherche de quelque chose de nouveau.",
+      eyebrow: "DJ • Paris • Depuis 2022",
+      title: "DJ WAYANS",
+      accent: "AFRO • AMAPIANO",
       layout: "showcase",
+      contentClassName: "pt-[42vh]! md:pt-16! lg:pt-32!",
+      description:
+        "Un set est un échange d'énergie : DJ Wayans lit la salle, la transforme et la lui renvoie amplifiée, des soirées intimistes aux activations de marque.",
       image: {
-        src: "/wayans/photos/hero-pic.jpeg",
+        src: heroImage,
         alt: "Portrait en noir et blanc de DJ Wayans, de profil",
-        badge: "Clubs • Marques • Événements",
+        badge: "DJ Wayans • Paris",
         caption: "Basé à Paris, disponible en Europe",
-        position: "50% 25%",
+        position: heroPosition,
       },
-      ctas: [
-        { label: "Booking", href: "#contact", variant: "primary" },
-        {
-          label: "Écouter Wayans",
-          href: soundCloudUrl,
-          variant: "secondary",
-          external: true,
-        },
-      ],
-      stats: [
-        { value: "CLUBS", label: "Formats" },
-        { value: "MARQUES", label: "Activations" },
-        { value: "PRIVÉ", label: "Événements" },
-        { value: "PARIS", label: "Base" },
-      ],
-      footerNote:
-        "Du booth sur un rooftop parisien au pied de la tour Eiffel, une présence concentrée, précise et entièrement tournée vers le public.",
+      ctas: heroCtas,
+      stats: heroStats,
+      footerNote: "Défiler pour explorer",
     },
   },
   about: {
@@ -332,26 +312,23 @@ const wayansPressKit: PressKitConfig = {
     homepageTitle: "Univers visuel",
     homepageCtaLabel: "Ouvrir la galerie",
     images: [
-      {
-        src: "/wayans/photos/gallery-1.jpeg",
-        alt: "DJ Wayans aux platines, casque sur les oreilles",
-        size: "md:col-span-2",
-      },
-      { src: "/wayans/photos/gallery-8.jpeg", alt: "DJ Wayans en pleine performance, lumière rouge" },
-      { src: "/wayans/photos/gallery-5.jpeg", alt: "DJ Wayans avec Nike Mercurial Tour devant la tour Eiffel" },
-      { src: "/wayans/photos/gallery-4.jpeg", alt: "Portrait noir et blanc de DJ Wayans, de profil" },
-      { src: "/wayans/photos/gallery-3.jpeg", alt: "Portrait noir et blanc de DJ Wayans debout contre un mur" },
-      { src: "/wayans/photos/gallery-9.jpeg", alt: "DJ Wayans aux platines lors de la soirée Love & Bowl" },
-      { src: "/wayans/photos/gallery-10.jpeg", alt: "DJ Wayans en set, nom projeté sur l'écran de scène" },
-      { src: "/wayans/photos/gallery-2.jpeg", alt: "Portrait noir et blanc de DJ Wayans en pose floutée" },
-      { src: "/wayans/photos/gallery-14.jpeg", alt: "DJ Wayans en set, éclairage rouge" },
-      { src: "/wayans/photos/gallery-13.jpeg", alt: "Portrait de DJ Wayans dans un bar" },
-      { src: "/wayans/photos/gallery-12.jpeg", alt: "Portrait de DJ Wayans en lumière chaude" },
-      { src: "/wayans/photos/gallery-7.jpeg", alt: "Portrait de DJ Wayans en pull tapisserie" },
+      { src: "/wayans/photos/gallery-1.jpeg", alt: "DJ Wayans aux platines, casque sur les oreilles", size: "md:col-span-2" },
+      { src: "/wayans/photos/gallery-8.jpeg", alt: "DJ Wayans aux platines sous une lumière rouge, au Bateau Phare" },
+      { src: "/wayans/photos/gallery-16.jpeg", alt: "DJ Wayans en set, bonnet blanc et maillot, lumière rouge" },
+      { src: "/wayans/photos/gallery-12.jpeg", alt: "DJ Wayans en set lors de la soirée Love & Bowl" },
+      { src: "/wayans/photos/gallery-13.jpeg", alt: "DJ Wayans en set, son nom projeté sur l'écran de scène" },
+      { src: "/wayans/photos/gallery-7.jpeg", alt: "DJ Wayans et un invité devant la tour Eiffel, Nike Mercurial Tour" },
+      { src: "/wayans/photos/hero-pic.jpeg", alt: "Portrait noir et blanc de DJ Wayans, de profil" },
+      { src: "/wayans/photos/gallery-4.jpeg", alt: "Portrait noir et blanc de DJ Wayans, de profil, yeux fermés" },
+      { src: "/wayans/photos/gallery-5.jpeg", alt: "Portrait noir et blanc de DJ Wayans, de profil, tête baissée" },
+      { src: "/wayans/photos/gallery-10.jpeg", alt: "DJ Wayans assis sur un tabouret, portrait noir et blanc" },
+      { src: "/wayans/photos/gallery-2.jpeg", alt: "DJ Wayans debout contre un mur, portrait noir et blanc" },
+      { src: "/wayans/photos/gallery-3.jpeg", alt: "Portrait noir et blanc de DJ Wayans, effet de flou de mouvement" },
+      { src: "/wayans/photos/gallery-9.jpeg", alt: "DJ Wayans de face, pull tapisserie" },
       { src: "/wayans/photos/gallery-11.jpeg", alt: "DJ Wayans assis sur un tabouret, pull tapisserie" },
-      { src: "/wayans/photos/gallery-15.jpeg", alt: "Portrait noir et blanc de DJ Wayans assis" },
-      { src: "/wayans/photos/gallery-16.jpeg", alt: "DJ Wayans assis sur un tabouret, plan large" },
       { src: "/wayans/photos/IMG_9834.jpeg", alt: "DJ Wayans assis, portrait en pied" },
+      { src: "/wayans/photos/gallery-14.jpeg", alt: "Portrait de DJ Wayans en chemise brune, lumière chaude" },
+      { src: "/wayans/photos/gallery-15.jpeg", alt: "Portrait de DJ Wayans en pull rayé jaune dans un bar" },
     ],
   },
 };
@@ -368,7 +345,7 @@ export const wayansClient: ClientConfig = {
   description:
     "DJ parisien depuis 2022, DJ Wayans mixe Afro, Amapiano, Dancehall, Zouk et Hip-Hop RnB pour clubs, marques et événements.",
   longBio: wayansPressKit.about.paragraphs.join(" "),
-  heroImage: "/wayans/photos/hero-pic.jpeg",
+  heroImage,
   gallery: wayansPressKit.gallery.images,
   socials: {
     instagram: instagramUrl,
@@ -414,7 +391,7 @@ export const wayansClient: ClientConfig = {
     ogImage: "/opengraph-image",
     canonical: "https://wayans.presskit.fr/",
   },
-  defaultTheme: "yellow",
+  defaultTheme: "orange",
   defaultVariant: "impact",
   pressKit: wayansPressKit,
 };
