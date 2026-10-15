@@ -204,3 +204,13 @@
   gap: 0.9rem 1.5rem;
   color: rgb(255 255 255 / 0.82);
 }
+
+/* Hero Vitrine (desktop) : photo décalée à droite pour ne pas chevaucher le titre ; bord gauche fondu. */
+@media (min-width: 768px) {
+  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type img[class*="object-cover"] {
+    width: 78%;
+    margin-left: auto;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 24%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 24%);
+  }
+}
