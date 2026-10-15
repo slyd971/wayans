@@ -141,3 +141,13 @@
 .poster[data-pk-theme="gold"] :global(#contact) [class*="bg-[rgb(var(--pk-accent-rgb)/0.18)]"] {
   background-color: rgb(200 164 72 / 0.3);
 }
+
+/* Ligne d'accent du hero plus longue : taille réduite pour tenir sur une ligne. */
+.poster[data-pk-theme="gold"] h1[class] span {
+  font-size: 0.4em;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .poster[data-pk-theme="gold"] h1[class] span { font-size: 0.29em; }
+}
