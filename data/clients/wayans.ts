@@ -9,7 +9,7 @@ const bookingEmail = "wayans.pro@gmail.com";
 const whatsappUrl = "https://wa.me/33633863568";
 
 const heroImage = "/wayans/photos/hero-pic-retouche.jpeg";
-const heroPosition = "center 20%";
+const heroPosition = "60% 20%";
 
 const heroCtas: PressKitConfig["heroVariants"]["impact"]["ctas"] = [
   { label: "Booker WAYANS", href: "#contact", variant: "primary" },
@@ -110,7 +110,7 @@ const wayansPressKitFr: PressKitConfig = {
       title: "WAYANS",
       accent: "AFROBEAT, URBAN FR\n& RNB",
       layout: "showcase",
-      contentClassName: "pt-[6vh]! md:pt-16! lg:pt-32!",
+      contentClassName: "pt-[42vh]! md:pt-16! lg:pt-32!",
       description: "",
       image: {
         src: heroImage,
