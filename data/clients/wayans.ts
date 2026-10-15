@@ -8,7 +8,7 @@ const instagramUrl = "https://www.instagram.com/wayansboy";
 const bookingEmail = "wayans.pro@gmail.com";
 const whatsappUrl = "https://wa.me/33633863568";
 
-const heroImage = "/wayans/photos/hero-pic.jpeg";
+const heroImage = "/wayans/photos/hero-pic-retouche.jpeg";
 const heroPosition = "center 20%";
 
 const heroCtas: PressKitConfig["heroVariants"]["impact"]["ctas"] = [
@@ -320,7 +320,7 @@ const wayansPressKit: PressKitConfig = {
       { src: "/wayans/photos/gallery-12.jpeg", alt: "DJ Wayans en set lors de la soirée Love & Bowl" },
       { src: "/wayans/photos/gallery-13.jpeg", alt: "DJ Wayans en set, son nom projeté sur l'écran de scène" },
       { src: "/wayans/photos/gallery-7.jpeg", alt: "DJ Wayans et un invité devant la tour Eiffel, Nike Mercurial Tour" },
-      { src: "/wayans/photos/hero-pic.jpeg", alt: "Portrait noir et blanc de DJ Wayans, de profil" },
+      { src: "/wayans/photos/hero-pic-retouche.jpeg", alt: "Portrait noir et blanc de DJ Wayans, de profil" },
       { src: "/wayans/photos/gallery-4.jpeg", alt: "Portrait noir et blanc de DJ Wayans, de profil, yeux fermés" },
       { src: "/wayans/photos/gallery-5.jpeg", alt: "Portrait noir et blanc de DJ Wayans, de profil, tête baissée" },
       { src: "/wayans/photos/gallery-10.jpeg", alt: "DJ Wayans assis sur un tabouret, portrait noir et blanc" },
