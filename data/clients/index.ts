@@ -1,0 +1,20 @@
+import { wayansClient } from "@/data/clients/wayans";
+import type { ClientConfig } from "@/data/clients/types";
+
+export const clientRegistry = [wayansClient] as const;
+
+export type ClientSlug = (typeof clientRegistry)[number]["slug"];
+
+const clientsBySlug = new Map<string, ClientConfig>(
+  clientRegistry.map((client) => [client.slug, client])
+);
+
+export function getClients(): ClientConfig[] {
+  return [...clientRegistry];
+}
+
+export function getClientBySlug(slug?: string | null): ClientConfig | null {
+  if (!slug) return null;
+
+  return clientsBySlug.get(slug.toLowerCase()) ?? null;
+}

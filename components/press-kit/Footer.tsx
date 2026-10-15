@@ -1,0 +1,210 @@
+import Link from "next/link";
+import type { PressKitConfig } from "@/data/config";
+import type { ClientConfig } from "@/data/clients/types";
+
+type FooterProps = {
+  client: ClientConfig;
+  navigation: PressKitConfig["navigation"];
+  homeHref: string;
+  galleryHref: string;
+  videosHref?: string;
+};
+
+function getSocialLinks(client: ClientConfig) {
+  return [
+    { label: "Instagram", href: client.socials.instagram },
+    { label: "TikTok", href: client.socials.tikTok },
+    { label: "SoundCloud", href: client.socials.soundCloud },
+    { label: "YouTube", href: client.socials.website },
+    { label: "Spotify", href: client.socials.spotify },
+  ].filter((item): item is { label: string; href: string } => Boolean(item.href));
+}
+
+// Inline SVG flags: Windows does not render regional-indicator emoji flags.
+function LanguageFlag({ label }: { label: string }) {
+  const normalizedLabel = label.trim().toUpperCase();
+  const className = "h-3 w-[18px] shrink-0 rounded-[2px]";
+
+  if (normalizedLabel === "FR") {
+    return (
+      <svg aria-hidden="true" viewBox="0 0 3 2" className={className}>
+        <rect width="1" height="2" fill="#002654" />
+        <rect x="1" width="1" height="2" fill="#fff" />
+        <rect x="2" width="1" height="2" fill="#ce1126" />
+      </svg>
+    );
+  }
+
+  if (normalizedLabel === "EN") {
+    return (
+      <svg aria-hidden="true" viewBox="0 0 60 30" className={className}>
+        <clipPath id="uk-flag-clip">
+          <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+        </clipPath>
+        <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
+        <path
+          d="M0,0 L60,30 M60,0 L0,30"
+          clipPath="url(#uk-flag-clip)"
+          stroke="#C8102E"
+          strokeWidth="4"
+        />
+        <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" />
+        <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
+      </svg>
+    );
+  }
+
+  return null;
+}
+
+export function Footer({
+  client,
+  navigation,
+  homeHref,
+  galleryHref,
+  videosHref,
+}: FooterProps) {
+  const socialLinks = getSocialLinks(client);
+  const hasBookingEmail = Boolean(client.bookingEmail);
+  const footerLabels = client.pressKit.footer;
+  const languageSwitch = client.languageSwitch?.filter((item) => item.href);
+  const availabilityText =
+    footerLabels?.availabilityText ??
+    "Disponible pour clubs, festivals, événements privés et formats institutionnels.";
+
+  return (
+    <footer className="border-t border-white/10 bg-black px-4 py-7 text-white md:px-6 md:py-12">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-5 gap-y-7 sm:grid-cols-4 md:grid-cols-[1.25fr_0.85fr_0.85fr_1fr] md:gap-10">
+        <div className="col-span-2 sm:col-span-1">
+          <Link
+            href={homeHref}
+            className="text-xl font-black uppercase tracking-[0.16em] text-white md:text-2xl md:tracking-[0.18em]"
+          >
+            {client.name}
+          </Link>
+          <p className="mt-3 max-w-md text-sm leading-6 text-white/58 sm:max-w-none">
+            {client.tagline}. {availabilityText}
+          </p>
+          <div className="mt-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/35">
+            {client.city} · {client.country}
+          </div>
+        </div>
+
+        <div>
+          <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--pk-accent)] md:tracking-[0.24em]">
+            {footerLabels?.navigationLabel ?? "Navigation"}
+          </div>
+          <div className="mt-3 grid gap-2 text-sm text-white/68">
+            {navigation.items.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="transition hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
+            <Link href={galleryHref} className="transition hover:text-white">
+              {footerLabels?.fullGalleryLabel ?? "Galerie complète"}
+            </Link>
+            {videosHref && (
+              <Link href={videosHref} className="transition hover:text-white">
+                {footerLabels?.allVideosLabel ?? "Toutes les vidéos"}
+              </Link>
+            )}
+          </div>
+        </div>
+
+        <div>
+          <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--pk-accent)] md:tracking-[0.24em]">
+            {footerLabels?.socialLabel ?? "Réseaux"}
+          </div>
+          <div className="mt-3 grid gap-2 text-sm text-white/68">
+            {socialLinks.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="col-span-2 sm:col-span-1">
+          <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--pk-accent)] md:tracking-[0.24em]">
+            {footerLabels?.bookingLabel ?? "Booking"}
+          </div>
+          <div className="mt-3 grid gap-2 text-sm text-white/68">
+            {hasBookingEmail ? (
+              <a
+                href={`mailto:${client.bookingEmail}`}
+                className="break-all transition hover:text-white"
+              >
+                {client.bookingEmail}
+              </a>
+            ) : null}
+            {client.contact.phone ? (
+              <a
+                href={`tel:${client.contact.phone.replace(/[^\d+]/g, "")}`}
+                className="transition hover:text-white"
+              >
+                {client.contact.phone}
+              </a>
+            ) : null}
+            {!hasBookingEmail && !client.contact.phone && client.socials.instagram ? (
+              <a
+                href={client.socials.instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-white"
+              >
+                Instagram
+              </a>
+            ) : null}
+          </div>
+          {languageSwitch?.length ? (
+            <div className="mt-5">
+              <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--pk-accent)] md:tracking-[0.24em]">
+                Langue
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {languageSwitch.map((item) => (
+                  <Link
+                    key={`${item.label}-${item.href}`}
+                    href={item.href}
+                    aria-current={item.active ? "page" : undefined}
+                    className={[
+                      "inline-flex h-9 items-center gap-2 rounded-full border px-3 text-xs font-semibold uppercase tracking-[0.16em] transition",
+                      item.active
+                        ? "border-[rgb(var(--pk-accent-rgb)/0.6)] bg-[rgb(var(--pk-accent-rgb)/0.16)] text-white"
+                        : "border-white/10 bg-white/[0.03] text-white/62 hover:border-white/20 hover:bg-white/[0.07] hover:text-white",
+                    ].join(" ")}
+                  >
+                    <LanguageFlag label={item.label} />
+                    <span>{item.label}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : null}
+          <div className="mt-5 text-[10px] uppercase tracking-[0.18em] text-white/30">
+            © {new Date().getFullYear()} {client.name} Press Kit
+          </div>
+          <a
+            href="https://presskit.fr"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-2 inline-flex text-[10px] uppercase tracking-[0.18em] text-white/30 transition hover:text-white/60"
+          >
+            Powered by Presskit.Fr
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+}
