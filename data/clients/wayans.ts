@@ -74,7 +74,7 @@ const wayansPressKit: PressKitConfig = {
     impact: {
       eyebrow: "",
       title: "DJ WAYANS",
-      accent: "AFRO • AMAPIANO",
+      accent: "URBAN FR & RNB",
       layout: "showcase",
       fullScreen: true,
       hideDesktopRightFade: true,
@@ -93,7 +93,7 @@ const wayansPressKit: PressKitConfig = {
     interactive: {
       eyebrow: "",
       title: "DJ WAYANS",
-      accent: "AFRO • AMAPIANO",
+      accent: "URBAN FR & RNB",
       layout: "interactive",
       description:
         "Afro, Amapiano, Dancehall, Zouk, Hip-Hop RnB : des sets qui s'adaptent à chaque public, parce que chaque salle est différente.",
@@ -110,7 +110,7 @@ const wayansPressKit: PressKitConfig = {
     showcase: {
       eyebrow: "",
       title: "DJ WAYANS",
-      accent: "AFRO • AMAPIANO",
+      accent: "URBAN FR & RNB",
       layout: "showcase",
       contentClassName: "pt-[42vh]! md:pt-16! lg:pt-32!",
       description:
