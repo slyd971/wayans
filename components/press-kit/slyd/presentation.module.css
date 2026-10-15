@@ -214,3 +214,10 @@
     font-size: 1rem;
   }
 }
+
+/* Surlignage du texte : or du thème (et non le rouge global), texte noir pour la lisibilité. */
+.poster[data-pk-theme="gold"] ::selection,
+.poster[data-pk-theme="gold"]::selection {
+  background: #c8a448;
+  color: #0d0d0d;
+}

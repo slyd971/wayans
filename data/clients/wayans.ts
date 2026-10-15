@@ -155,7 +155,7 @@ const wayansPressKitFr: PressKitConfig = {
     eyebrow: "Références",
     title: "Clubs, marques et scènes.",
     description:
-      "Des soirées parisiennes aux activations de marque, de Clermont-Ferrand au Ghana et à Malte.",
+      "Les clubs, les soirées et les marques avec lesquels Wayans a travaillé, de Paris à Malte.",
     regions: [
       {
         title: "Marques",
@@ -448,7 +448,7 @@ const wayansPressKitEn: PressKitConfig = {
     eyebrow: "References",
     title: "Clubs, brands and stages.",
     description:
-      "From Paris nights to brand activations, from Clermont-Ferrand to Ghana and Malta.",
+      "The clubs, nights and brands Wayans has worked with, from Paris to Malta.",
     regions: [
       {
         title: "Brands",
