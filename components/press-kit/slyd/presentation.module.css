@@ -151,3 +151,11 @@
 @media (max-width: 767px) {
   .poster[data-pk-theme="gold"] h1[class] span { font-size: 0.29em; }
 }
+
+/* Titre du hero : reste lisible quand il passe sur le bonnet blanc de la photo. */
+.poster[data-pk-theme="gold"] h1[class] {
+  text-shadow: 0 2px 6px rgb(0 0 0 / 0.55), 0 4px 22px rgb(0 0 0 / 0.5);
+}
+@media (min-width: 768px) {
+  .poster[data-pk-theme="gold"] h1[class] { font-size: clamp(2.9rem, 7.8vw, 8.5rem); }
+}
