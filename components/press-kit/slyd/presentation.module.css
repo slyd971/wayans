@@ -115,9 +115,9 @@
   background-size: 220px 220px;
 }
 
-/* Bloc booking en clair : seul bloc clair de la page. */
+/* Bloc booking en or : seul bloc coloré de la page, texte noir. */
 .poster[data-pk-theme="gold"] :global(#contact) {
-  background-color: #efe9dc;
+  background-color: #c8a448;
   color: #0d0d0d;
 }
 .poster[data-pk-theme="gold"] :global(#contact) [class*="text-white"] {
@@ -127,19 +127,19 @@
   color: #0d0d0d;
 }
 .poster[data-pk-theme="gold"] :global(#contact) [class*="border-white"] {
-  border-color: rgb(13 13 13 / 0.16);
+  border-color: rgb(13 13 13 / 0.22);
 }
 .poster[data-pk-theme="gold"] :global(#contact) [class*="bg-white"] {
-  background-color: rgb(13 13 13 / 0.04);
+  background-color: rgb(13 13 13 / 0.07);
 }
 .poster[data-pk-theme="gold"] :global(#contact) [class*="text-[var(--pk-accent)]"] {
-  color: #8a6d1f;
+  color: rgb(13 13 13 / 0.75);
 }
 .poster[data-pk-theme="gold"] :global(#contact) [class*="text-[var(--pk-accent-soft)]"] {
-  color: #7a5f17;
+  color: #0d0d0d;
 }
 .poster[data-pk-theme="gold"] :global(#contact) [class*="bg-[rgb(var(--pk-accent-rgb)/0.18)]"] {
-  background-color: rgb(200 164 72 / 0.3);
+  background-color: rgb(13 13 13 / 0.12);
 }
 
 /* Ligne d'accent du hero plus longue : taille réduite pour tenir sur une ligne. */
