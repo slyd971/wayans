@@ -115,31 +115,28 @@
   background-size: 220px 220px;
 }
 
-/* Bloc booking en or : seul bloc coloré de la page, texte noir. */
+/* Bloc booking en or : fond or, textes noirs ; les cartes de contact restent noires. */
 .poster[data-pk-theme="gold"] :global(#contact) {
   background-color: #c8a448;
   color: #0d0d0d;
 }
-.poster[data-pk-theme="gold"] :global(#contact) [class*="text-white"] {
-  color: rgb(13 13 13 / 0.8);
-}
 .poster[data-pk-theme="gold"] :global(#contact) h2 {
   color: #0d0d0d;
 }
-.poster[data-pk-theme="gold"] :global(#contact) [class*="border-white"] {
-  border-color: rgb(13 13 13 / 0.22);
+.poster[data-pk-theme="gold"] :global(#contact) p {
+  color: rgb(13 13 13 / 0.8);
 }
-.poster[data-pk-theme="gold"] :global(#contact) [class*="bg-white"] {
-  background-color: rgb(13 13 13 / 0.07);
-}
-.poster[data-pk-theme="gold"] :global(#contact) [class*="text-[var(--pk-accent)]"] {
+.poster[data-pk-theme="gold"] :global(#contact) :global(.mb-4),
+.poster[data-pk-theme="gold"] :global(#contact) [class*="tracking-[0.35em]"][class*="text-[var(--pk-accent)]"] {
   color: rgb(13 13 13 / 0.75);
 }
-.poster[data-pk-theme="gold"] :global(#contact) [class*="text-[var(--pk-accent-soft)]"] {
-  color: #0d0d0d;
+.poster[data-pk-theme="gold"] :global(#contact) a {
+  background-color: #0d0d0d;
+  border-color: rgb(255 255 255 / 0.12);
+  color: #ffffff;
 }
-.poster[data-pk-theme="gold"] :global(#contact) [class*="bg-[rgb(var(--pk-accent-rgb)/0.18)]"] {
-  background-color: rgb(13 13 13 / 0.12);
+.poster[data-pk-theme="gold"] :global(#contact) a [class*="text-white/35"] {
+  color: rgb(255 255 255 / 0.55);
 }
 
 /* Ligne d'accent du hero plus longue : taille réduite pour tenir sur une ligne. */

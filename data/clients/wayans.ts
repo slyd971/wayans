@@ -298,13 +298,6 @@ const wayansPressKit: PressKitConfig = {
         icon: "instagram",
         external: true,
       },
-      {
-        label: "SoundCloud",
-        value: "Écouter Wayans",
-        href: soundCloudUrl,
-        icon: "music",
-        external: true,
-      },
     ],
   },
   gallery: {
