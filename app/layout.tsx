@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { resolveRequestClient } from "@/lib/clients/server";
 import { buildClientMetadata, buildSiteJsonLd } from "@/lib/seo";
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 async function RootLayoutContent({ children }: { children: React.ReactNode }) {
   let siteJsonLd: ReturnType<typeof buildSiteJsonLd> | null = null;
+  const lang = (await headers()).get("x-pk-lang") === "en" ? "en" : "fr";
 
   try {
     const client = await resolveRequestClient();
@@ -44,7 +46,7 @@ async function RootLayoutContent({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <html lang="fr">
+    <html lang={lang}>
       <body>
         {children}
         {siteJsonLd ? (

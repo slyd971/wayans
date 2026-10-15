@@ -169,35 +169,6 @@
   background-size: 240px 240px;
 }
 
-/* Hero Vitrine (desktop) : fond clair ; seul le titre passe en noir, les couleurs d'accent restent celles du thème. */
-@media (min-width: 768px) {
-  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type {
-    --pk-bg: #f1efeb;
-    background-color: #f1efeb;
-  }
-  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type [class*="from-black/72"],
-  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type [class*="bg-black/12"],
-  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type [class*="bg-black/15"] {
-    display: none;
-  }
-  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type h1[class] {
-    color: #000000 !important;
-    -webkit-text-fill-color: #000000;
-    text-shadow: none;
-  }
-  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type h1[class] span {
-    color: var(--pk-accent) !important;
-    -webkit-text-fill-color: var(--pk-accent);
-  }
-  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type [data-pk-stats] [class*="text-white"],
-  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type [class*="text-white"]:not(a):not(button):not([data-pk-stats] *) {
-    color: rgb(13 13 13 / 0.7);
-  }
-  .poster[data-pk-theme="gold"][data-pk-variant="showcase"] > section:first-of-type a[class*="border-white"] {
-    background-color: rgb(13 13 13 / 0.88);
-  }
-}
-
 /* KPI du hero plus grands (Wayans). */
 .poster[data-pk-theme="gold"] [data-pk-stats] > div > :first-child {
   font-size: clamp(2.6rem, 7.5vw, 4.75rem);
@@ -220,4 +191,16 @@
 .poster[data-pk-theme="gold"]::selection {
   background: #c8a448;
   color: #0d0d0d;
+}
+
+/* Références : les noms de lieux restent au rang d'éléments de liste, sous les sous-titres de bloc. */
+.poster[data-pk-theme="gold"] [data-slyd-references] {
+  font-family: inherit;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  font-weight: 500;
+  line-height: 1.4;
+  text-transform: none;
+  letter-spacing: 0;
+  gap: 0.9rem 1.5rem;
+  color: rgb(255 255 255 / 0.82);
 }

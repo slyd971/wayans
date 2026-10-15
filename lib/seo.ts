@@ -57,7 +57,10 @@ export function buildClientMetadata(
   const image = overrides?.image ?? client.seo.ogImage;
   const keywords = overrides?.keywords ?? client.seo.keywords;
   const imageAlt =
-    overrides?.imageAlt ?? `Aperçu du dossier de presse de ${client.name}`;
+    overrides?.imageAlt ??
+    (client.slug.endsWith("-en")
+      ? `Press kit preview of ${client.name}`
+      : `Aperçu du dossier de presse de ${client.name}`);
   const canonicalUrl = getCanonicalUrl(client, path);
   const imageUrl = new URL(image, canonicalUrl).toString();
   const languageAlternates = getLanguageAlternates(client);
@@ -118,7 +121,7 @@ export function buildClientMetadata(
       description,
       url: canonicalUrl,
       siteName: client.name,
-      locale: "fr_FR",
+      locale: client.slug.endsWith("-en") ? "en_US" : "fr_FR",
       type: "website",
       images: [
         {
@@ -163,6 +166,19 @@ export function buildClientSitemapEntries(
       images: galleryImages,
     },
   ];
+
+  const englishSwitch = client.languageSwitch?.find(
+    (item) => item.label.toUpperCase() === "EN" && !item.active
+  );
+
+  if (englishSwitch) {
+    entries.push({
+      url: getCanonicalUrl(client, englishSwitch.href),
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    });
+  }
 
   if (client.pressKit.videos.items.length > 0) {
     entries.push({

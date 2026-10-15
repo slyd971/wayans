@@ -110,8 +110,6 @@ const wayansPressKitFr: PressKitConfig = {
       title: "WAYANS",
       accent: "AFROBEAT, URBAN FR\n& RNB",
       layout: "showcase",
-      fullScreen: true,
-      hideDesktopRightFade: true,
       contentClassName: "pt-[6vh]! md:pt-16! lg:pt-32!",
       description: "",
       image: {
@@ -583,7 +581,7 @@ const wayansPressKitEn: PressKitConfig = {
 const wayansBaseClient = {
   domain: "wayans.presskit.fr",
   vercelSubdomain: "wayans.vercel.app",
-  name: "DJ Wayans",
+  name: "Wayans",
   city: "Paris",
   country: "France",
   heroImage,

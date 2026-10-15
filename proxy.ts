@@ -9,8 +9,14 @@ export function proxy(request: NextRequest) {
   );
   const client = getClientByHost(hostname);
 
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set(
+    "x-pk-lang",
+    /^\/en(\/|$)/.test(request.nextUrl.pathname) ? "en" : "fr"
+  );
+
   if (!client) {
-    return NextResponse.next();
+    return NextResponse.next({ request: { headers: requestHeaders } });
   }
 
   const vercelHostname = normalizeHostname(client.vercelSubdomain);
@@ -23,7 +29,7 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(redirectUrl, 308);
   }
 
-  return NextResponse.next();
+  return NextResponse.next({ request: { headers: requestHeaders } });
 }
 
 export const config = {
