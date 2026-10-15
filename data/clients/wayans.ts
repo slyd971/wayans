@@ -75,7 +75,9 @@ const wayansPressKit: PressKitConfig = {
       eyebrow: "DJ • Paris • Depuis 2022",
       title: "DJ WAYANS",
       accent: "AFRO • AMAPIANO",
-      layout: "impact",
+      layout: "showcase",
+      fullScreen: true,
+      hideDesktopRightFade: true,
       description:
         "Un set est un échange d'énergie : DJ Wayans lit la salle, la transforme et la lui renvoie amplifiée, des soirées intimistes aux activations de marque.",
       image: {
