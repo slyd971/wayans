@@ -225,7 +225,7 @@ const wayansPressKit: PressKitConfig = {
   },
   videos: {
     eyebrow: "Vidéos",
-    title: "L'énergie en images.",
+    title: "Son univers en images.",
     description: "Des extraits live pour découvrir DJ Wayans en situation.",
     items: [
       {
